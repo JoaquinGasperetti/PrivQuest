@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidad | Cinthia's Quest</title>
+  <meta name="description" content="Política de Privacidad oficial del juego móvil Cinthia's Quest (com.hkemtrentainment.cinthiasquestr). Información sobre datos recopilados, guardado en la nube y seguridad.">
+  <meta name="author" content="Joaquín Gasperetti / HK Entertainment">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Política de Privacidad - Cinthia's Quest">
+  <meta property="og:description" content="Información transparente sobre el uso de datos, Firebase Cloud Save y permisos en el juego Cinthia's Quest.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💎</text></svg>">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --primary-light: #eff6ff;
+      --accent: #8b5cf6;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --border-highlight: #cbd5e1;
+      --badge-bg: #f1f5f9;
+      --badge-text: #334155;
+      --success-bg: #ecfdf5;
+      --success-text: #065f46;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    [data-theme="dark"] {
+      --primary: #3b82f6;
+      --primary-hover: #60a5fa;
+      --primary-light: #1e293b;
+      --accent: #a78bfa;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --border-highlight: #475569;
+      --badge-bg: #334155;
+      --badge-text: #cbd5e1;
+      --success-bg: #064e3b;
+      --success-text: #6ee7b7;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      line-height: 1.65;
+      color: var(--text);
+      background-color: var(--bg);
+      transition: background-color 0.2s ease, color 0.2s ease;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header & Navigation Bar */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: var(--card-bg);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow);
+    }
+
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1.25rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    }
+
+    .brand-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+
+    .brand-subtitle {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 0.85rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background-color: var(--card-bg);
+      color: var(--text);
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-action:hover {
+      background-color: var(--badge-bg);
+      border-color: var(--border-highlight);
+    }
+
+    /* Container & Layout */
+    .main-container {
+      max-width: 1120px;
+      margin: 2rem auto;
+      padding: 0 1.25rem 4rem;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 2.25rem;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .main-container {
+        grid-template-columns: 1fr;
+        margin: 1.25rem auto;
+        gap: 1.5rem;
+      }
+    }
+
+    /* Sidebar Navigation */
+    .sidebar {
+      position: sticky;
+      top: 5rem;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem;
+      box-shadow: var(--shadow);
+    }
+
+    @media (max-width: 900px) {
+      .sidebar {
+        position: static;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .sidebar-title {
+      font-size: 0.825rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .search-box {
+      width: 100%;
+      padding: 0.55rem 0.75rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background-color: var(--bg);
+      color: var(--text);
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search-box:focus {
+      border-color: var(--primary);
+    }
+
+    .nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+
+    .nav-item a {
+      display: block;
+      padding: 0.45rem 0.65rem;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .nav-item a:hover {
+      color: var(--primary);
+      background-color: var(--primary-light);
+    }
+
+    .nav-item.active a {
+      color: var(--primary);
+      background-color: var(--primary-light);
+      font-weight: 600;
+    }
+
+    /* Content Area */
+    .content {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2.25rem 2.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    @media (max-width: 640px) {
+      .content {
+        padding: 1.5rem 1.25rem;
+      }
+    }
+
+    /* Hero / App Banner */
+    .hero-meta {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background-color: var(--success-bg);
+      color: var(--success-text);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+      margin-bottom: 0.75rem;
+    }
+
+    .doc-title {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .doc-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.75rem;
+      background-color: var(--bg);
+      padding: 1rem 1.25rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .meta-label {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+    }
+
+    .meta-val {
+      font-weight: 600;
+      color: var(--text);
+      word-break: break-all;
+    }
+
+    /* Headings & Prose */
+    .section-block {
+      margin-bottom: 2.5rem;
+      scroll-margin-top: 5.5rem;
+    }
+
+    .section-block:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      margin-bottom: 1rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    h2 .section-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background-color: var(--primary-light);
+      color: var(--primary);
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin: 1.35rem 0 0.6rem;
+      color: var(--text);
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    ul, ol {
+      margin: 0.75rem 0 1.25rem 1.5rem;
+      color: var(--text);
+    }
+
+    li {
+      margin-bottom: 0.45rem;
+    }
+
+    /* Highlights & Callout Cards */
+    .callout {
+      border-left: 4px solid var(--primary);
+      background-color: var(--primary-light);
+      padding: 1rem 1.25rem;
+      border-radius: 0 10px 10px 0;
+      margin: 1.25rem 0;
+      font-size: 0.925rem;
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Data Safety Table */
+    .table-container {
+      overflow-x: auto;
+      margin: 1.25rem 0;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      text-align: left;
+    }
+
+    thead {
+      background-color: var(--bg);
+      border-bottom: 2px solid var(--border);
+    }
+
+    th {
+      padding: 0.75rem 1rem;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr:hover {
+      background-color: var(--badge-bg);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background-color: var(--badge-bg);
+      color: var(--badge-text);
+    }
+
+    .badge-primary {
+      background-color: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .badge-success {
+      background-color: var(--success-bg);
+      color: var(--success-text);
+    }
+
+    /* Code styling */
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.85em;
+      background-color: var(--bg);
+      padding: 0.15rem 0.35rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+
+    /* Interactive Google Play Tool helper */
+    .play-guide-card {
+      border: 1px dashed var(--primary);
+      background-color: var(--primary-light);
+      border-radius: 10px;
+      padding: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .play-guide-card h4 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Contact box */
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      background-color: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .copy-email-btn {
+      align-self: flex-start;
+      margin-top: 0.25rem;
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      background-color: var(--card-bg);
+      padding: 2rem 1.25rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 3rem;
+    }
+
+    /* Print styles */
+    @media print {
+      .site-header, .sidebar, .btn-action, .search-box, .play-guide-card, .site-footer {
+        display: none !important;
+      }
+      .main-container {
+        display: block;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .content {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+      }
+      body {
+        background: white;
+        color: black;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#inicio" class="brand">
+        <div class="brand-icon">CQ</div>
+        <div>
+          <div class="brand-title">Cinthia's Quest</div>
+          <div class="brand-subtitle">Política de Privacidad</div>
+        </div>
+      </a>
+      <div class="header-actions">
+        <button id="themeToggleBtn" class="btn-action" aria-label="Cambiar modo oscuro o claro">
+          <span id="themeIcon">🌙</span>
+          <span id="themeText">Oscuro</span>
+        </button>
+        <button id="printBtn" class="btn-action" aria-label="Imprimir o exportar PDF">
+          <span>🖨️</span>
+          <span>Imprimir</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Layout -->
+  <div class="main-container" id="inicio">
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-title">
+        <span>Índice de contenido</span>
+        <span>📑</span>
+      </div>
+      <input type="text" id="searchInput" class="search-box" placeholder="Buscar en la política..." aria-label="Buscar términos en la política de privacidad">
+      <nav>
+        <ul class="nav-list" id="navList">
+          <li class="nav-item active"><a href="#resumen">Resumen General</a></li>
+          <li class="nav-item"><a href="#seguridad-datos">Ficha Google Play</a></li>
+          <li class="nav-item"><a href="#datos-recopilados">Datos que Recopilamos</a></li>
+          <li class="nav-item"><a href="#datos-no-recopilados">Datos que NO Recopilamos</a></li>
+          <li class="nav-item"><a href="#permisos">Permisos del Sistema</a></li>
+          <li class="nav-item"><a href="#servicios-terceros">Servicios de Terceros</a></li>
+          <li class="nav-item"><a href="#seguridad">Seguridad de la Información</a></li>
+          <li class="nav-item"><a href="#eliminacion">Eliminación de Datos</a></li>
+          <li class="nav-item"><a href="#menores">Privacidad de Menores</a></li>
+          <li class="nav-item"><a href="#derechos">Tus Derechos</a></li>
+          <li class="nav-item"><a href="#contacto">Contacto y Soporte</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Document Content -->
+    <main class="content">
+
+      <!-- Header / Meta section -->
+      <div class="hero-meta">
+        <div class="status-badge">
+          <span>●</span> Documento Oficial y Vigente
+        </div>
+        <h1 class="doc-title">Política de Privacidad</h1>
+        <p class="doc-subtitle">
+          Esta Política de Privacidad describe de manera transparente cómo se gestiona y protege la información en el videojuego para dispositivos móviles <strong>Cinthia's Quest</strong>.
+        </p>
+        <div class="meta-grid">
+          <div class="meta-item">
+            <span class="meta-label">Aplicación</span>
+            <span class="meta-val">Cinthia's Quest</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">ID de Paquete</span>
+            <span class="meta-val"><code>com.hkemtrentainment.cinthiasquestr</code></span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Desarrollador Responsable</span>
+            <span class="meta-val">Joaquín Gasperetti / HK Entertainment</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Fecha de Entrada en Vigor</span>
+            <span class="meta-val">10 de noviembre de 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section: Resumen General -->
+      <section id="resumen" class="section-block">
+        <h2><span class="section-number">1</span> Resumen General y Compromiso</h2>
+        <p>
+          En <strong>Cinthia's Quest</strong> valoramos y respetamos profundamente tu privacidad. Nuestro juego es una experiencia de aventura y rompecabezas estilo <em>Match-3</em> diseñada para el entretenimiento casual.
+        </p>
+        <p>
+          <strong>Principio fundamental:</strong> No requerimos que proporciones tu nombre real, documento de identidad, dirección física, número de teléfono ni contraseña para jugar. No vendemos, no comercializamos ni alquilamos información personal a terceros.
+        </p>
+        <div class="callout">
+          <div class="callout-title">
+            <span>🛡️</span> Sin Registro Obligatorio de Correo
+          </div>
+          El juego utiliza una cuenta anónima generada automáticamente por los servicios de Google Firebase para que puedas guardar tus avances en la nube y sincronizarlos de forma transparente sin tener que crear una cuenta con contraseña ni compartir tus redes sociales.
+        </div>
+      </section>
+
+      <!-- Section: Ficha de Seguridad de Datos para Google Play -->
+      <section id="seguridad-datos" class="section-block">
+        <h2><span class="section-number">2</span> Resumen de Seguridad de Datos (Google Play Data Safety)</h2>
+        <p>
+          Para cumplir con las directrices de la sección <em>Data Safety</em> de Google Play Store, a continuación se desglosan con exactitud las categorías de datos manejadas por la aplicación:
+        </p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Categoría de Dato</th>
+                <th>Datos Específicos</th>
+                <th>Finalidad</th>
+                <th>Tipo de Almacenamiento</th>
+                <th>¿Se Comparte?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Identificadores</strong></td>
+                <td>ID de Usuario Anónimo (Firebase Auth UID)</td>
+                <td>Autenticación anónima y asignación de partida en la nube</td>
+                <td>Nube (Firebase)</td>
+                <td><span class="badge badge-success">No se comparte con terceros</span></td>
+              </tr>
+              <tr>
+                <td><strong>Actividad en la app</strong></td>
+                <td>Nivel alcanzado, estrellas ganadas, monedas acumuladas, potenciadores, rachas</td>
+                <td>Funcionalidad del juego y sincronización de progreso (Cloud Save)</td>
+                <td>Local (DataStore) y Nube (Firestore)</td>
+                <td><span class="badge badge-success">No se comparte</span></td>
+              </tr>
+              <tr>
+                <td><strong>Preferencias</strong></td>
+                <td>Ajustes de sonido, vibración táctil (háptica) y movimiento reducido</td>
+                <td>Accesibilidad y configuración de usuario</td>
+                <td>Exclusivamente Local (DataStore)</td>
+                <td><span class="badge badge-success">No se comparte</span></td>
+              </tr>
+              <tr>
+                <td><strong>Diagnóstico y Red</strong></td>
+                <td>Dirección IP transitoria, logs técnicos de conexión HTTP/TLS</td>
+                <td>Mantenimiento de conectividad y seguridad de la API</td>
+                <td>Servidores seguros de Google Cloud</td>
+                <td>Solo procesadores esenciales (Google Cloud)</td>
+              </tr>
+              <tr>
+                <td><strong>Publicidad (AdMob)</strong></td>
+                <td>ID de Publicidad de Google (GAID) si los anuncios están activos</td>
+                <td>Visualización de anuncios publicitarios o recompensados</td>
+                <td>Gestionado por Google Mobile Ads SDK</td>
+                <td>Red publicitaria de Google</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="play-guide-card">
+          <h4><span>💡</span> Nota para la consola de desarrollador de Google Play</h4>
+          <p style="font-size: 0.85rem; margin-bottom: 0.5rem;">
+            En el cuestionario de Seguridad de los Datos (Data Safety) en Google Play Console:
+          </p>
+          <ul style="font-size: 0.85rem; margin-bottom: 0;">
+            <li><strong>¿La app recopila o comparte datos de usuario?:</strong> Sí (Identificador de usuario aleatorio para Cloud Save y datos de rendimiento del juego).</li>
+            <li><strong>¿Los datos se transfieren a través de una conexión segura?:</strong> Sí, todos los datos viajan cifrados mediante el protocolo HTTPS/TLS.</li>
+            <li><strong>¿Ofreces una forma para que los usuarios soliciten la eliminación de sus datos?:</strong> Sí, mediante solicitud directa por correo electrónico al desarrollador.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section: Datos que Recopilamos -->
+      <section id="datos-recopilados" class="section-block">
+        <h2><span class="section-number">3</span> Datos que Recopilamos y Cómo se Utilizan</h2>
+
+        <h3>A. Datos de Progreso y Jugabilidad (Almacenamiento Local y Nube)</h3>
+        <p>
+          La aplicación utiliza la librería <code>Jetpack DataStore</code> de Android para almacenar de forma local en tu dispositivo tus avances en el juego. Para evitar que pierdas tu partida al cambiar de dispositivo o actualizar la app, estos datos se sincronizan con la base de datos <code>Google Cloud Firestore</code>:
+        </p>
+        <ul>
+          <li><strong>Monedas virtuales (Coins):</strong> Obtenidas superando niveles, misiones y cofres diarios.</li>
+          <li><strong>Nivel máximo desbloqueado:</strong> Tu avance por el mapa del mundo (World Map).</li>
+          <li><strong>Estrellas por nivel:</strong> Puntuación de 1 a 3 estrellas por cada nivel completado.</li>
+          <li><strong>Inventario de Potenciadores (Boosters):</strong> Cantidad disponible de Martillos, Dinamita y Barajar.</li>
+          <li><strong>Rachas y Retención:</strong> Contador de victorias consecutivas (<em>Win Streak</em>), racha de inicio de sesión diario (1 a 7 días) y cofres de estrellas reclamados.</li>
+          <li><strong>Misiones Diarias:</strong> Contadores de combinaciones realizadas, potenciadores activados y niveles superados en el día en curso.</li>
+        </ul>
+
+        <h3>B. Autenticación Anónima (Firebase Auth)</h3>
+        <p>
+          Al iniciar la aplicación, se genera un identificador aleatorio único (UID) a través de <strong>Firebase Authentication</strong> mediante el método <code>signInAnonymously()</code>. Este identificador:
+        </p>
+        <ul>
+          <li>No está asociado a tu nombre real, correo electrónico ni número telefónico.</li>
+          <li>Permite asociar de forma exclusiva tus partidas y logros guardados en Cloud Firestore en la colección <code>users/{uid}</code>.</li>
+          <li>Te otorga una experiencia fluida sin formularios de registro ni solicitudes de contraseñas.</li>
+        </ul>
+
+        <h3>C. Preferencias Locales del Usuario</h3>
+        <p>
+          Se almacenan únicamente en la memoria local de tu dispositivo tus preferencias de juego: activación de sonido, respuesta háptica (vibración) y modo de movimiento reducido.
+        </p>
+      </section>
+
+      <!-- Section: Datos que NO Recopilamos -->
+      <section id="datos-no-recopilados" class="section-block">
+        <h2><span class="section-number">4</span> Datos que NO Recopilamos</h2>
+        <p>
+          Para tu total tranquilidad, <strong>Cinthia's Quest</strong> NO recopila, NO almacena ni tiene acceso a ninguna de las siguientes categorías de datos sensibles:
+        </p>
+        <ul>
+          <li><strong>Información de identificación personal directa:</strong> No solicitamos tu nombre, apellidos, dirección postal, correo electrónico ni documento de identidad.</li>
+          <li><strong>Ubicación geográfica precisa:</strong> No utilizamos el GPS ni los servicios de localización precisa del dispositivo.</li>
+          <li><strong>Archivos personales, fotos o contenido multimedia:</strong> No accedemos a tu galería, cámara fotográfica ni archivos locales privados.</li>
+          <li><strong>Micrófono o grabaciones de audio:</strong> No realizamos grabaciones ni procesamos audio ambiental.</li>
+          <li><strong>Contactos y Mensajería:</strong> No leemos tu agenda de contactos, registros de llamadas ni SMS.</li>
+          <li><strong>Información financiera o bancaria:</strong> No recopilamos números de tarjetas de crédito o débito ni cuentas bancarias.</li>
+        </ul>
+      </section>
+
+      <!-- Section: Permisos del Sistema Android -->
+      <section id="permisos" class="section-block">
+        <h2><span class="section-number">5</span> Permisos del Dispositivo (Android)</h2>
+        <p>
+          La aplicación solicita únicamente los permisos estrictamente requeridos para su correcta ejecución:
+        </p>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Permiso</th>
+                <th>Declaración en AndroidManifest</th>
+                <th>Justificación Técnica</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Acceso a Internet</strong></td>
+                <td><code>android.permission.INTERNET</code></td>
+                <td>Indispensable para comunicar con los servicios de Google Firebase (sincronizar el progreso en la nube) y para descargar contenido publicitario si está habilitado.</td>
+              </tr>
+              <tr>
+                <td><strong>Vibración / Respuesta Háptica</strong></td>
+                <td>Controlador interno del sistema (HapticFeedback)</td>
+                <td>Permite ofrecer respuesta táctil sutil cuando realizas combinaciones de gemas o activas potenciadores, mejorando la sensación de juego. Puede desactivarse en cualquier momento desde los ajustes del juego.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          <em>Nota:</em> La app <strong>no</strong> solicita permisos en tiempo de ejecución ("Runtime Permissions") considerados peligrosos por Google Play.
+        </p>
+      </section>
+
+      <!-- Section: Servicios de Terceros -->
+      <section id="servicios-terceros" class="section-block">
+        <h2><span class="section-number">6</span> Proveedores y Servicios de Terceros</h2>
+        <p>
+          Para prestar los servicios de guardado en la nube y eventual soporte publicitario, la aplicación se apoya en las soluciones tecnológicas de Google. Dichos terceros procesan datos conforme a sus propias políticas de privacidad y seguridad:
+        </p>
+        <ul>
+          <li>
+            <strong>Google Firebase (Firebase Auth y Cloud Firestore):</strong> Utilizado para la autenticación anónima y el almacenamiento seguro de la partida guardada.
+            <br>
+            <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Política de Privacidad y Seguridad en Firebase ↗</a>
+          </li>
+          <li>
+            <strong>Google Play Services:</strong> Infraestructura esencial del sistema operativo Android para la gestión segura de librerías.
+            <br>
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Política de Privacidad de Google ↗</a>
+          </li>
+          <li>
+            <strong>Google AdMob (Google Mobile Ads):</strong> Si se habilitan anuncios publicitarios o bonificados (ej. para obtener movimientos extra o potenciadores), AdMob puede utilizar identificadores del dispositivo conforme a las políticas de publicidad de Google.
+            <br>
+            <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Cómo utiliza Google la información de sitios o aplicaciones ↗</a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section: Seguridad de la Información -->
+      <section id="seguridad" class="section-block">
+        <h2><span class="section-number">7</span> Seguridad y Cifrado de la Información</h2>
+        <p>
+          Implementamos rigurosas medidas técnicas y organizativas para proteger tus datos de juego:
+        </p>
+        <ul>
+          <li><strong>Cifrado en tránsito:</strong> Todas las comunicaciones entre tu teléfono móvil y los servidores de Google Firebase se efectúan bajo el protocolo cifrado <code>HTTPS / TLS (Transport Layer Security)</code>.</li>
+          <li><strong>Reglas de seguridad en base de datos:</strong> Las reglas de Firestore están configuradas para que únicamente el usuario autenticado con su UID pueda leer y escribir en su documento individual de partida.</li>
+          <li><strong>Almacenamiento local seguro:</strong> El almacenamiento local en Android DataStore está aislado en el entorno de pruebas seguro (<em>sandbox</em>) de la propia aplicación y no es accesible por otras apps estándar instaladas en el dispositivo.</li>
+        </ul>
+      </section>
+
+      <!-- Section: Retención y Eliminación de Datos -->
+      <section id="eliminacion" class="section-block">
+        <h2><span class="section-number">8</span> Conservación y Eliminación de Datos</h2>
+        <p>
+          Conservamos los datos de juego en Cloud Firestore mientras continúes utilizando la aplicación o mientras desees conservar tu progreso.
+        </p>
+        <h3>¿Cómo solicitar la eliminación de tu información?</h3>
+        <p>
+          De conformidad con las políticas de Google Play y las normativas de protección de datos, tienes derecho a solicitar la eliminación permanente de tus datos de juego:
+        </p>
+        <ol>
+          <li>
+            <strong>Eliminación de datos locales:</strong> Puedes borrar todos los datos almacenados localmente desinstalando la aplicación de tu dispositivo Android o accediendo a <em>Ajustes &gt; Aplicaciones &gt; Cinthia's Quest &gt; Almacenamiento &gt; Borrar datos</em>.
+          </li>
+          <li>
+            <strong>Eliminación de datos en la Nube (Cloud Save):</strong> Si deseas que eliminemos tu registro y partida almacenada en Cloud Firestore, puedes enviar un correo electrónico a nuestro buzón de soporte indicando tu solicitud de supresión. Procederemos a dar de baja y purgar tu documento de partida en un plazo máximo de 30 días naturales.
+          </li>
+        </ol>
+      </section>
+
+      <!-- Section: Privacidad de Menores -->
+      <section id="menores" class="section-block">
+        <h2><span class="section-number">9</span> Privacidad de Menores (COPPA / GDPR-K / Google Play Families)</h2>
+        <p>
+          <strong>Cinthia's Quest</strong> es un juego familiar y no está orientado a la recopilación ilícita de datos de menores de 13 años (o la edad mínima legal en tu jurisdicción, como 16 años en determinados países de la Unión Europea).
+        </p>
+        <p>
+          Dado que no solicitamos información de contacto, nombres reales ni datos personales identificables a ningún usuario, no recopilamos a sabiendas datos de menores. Si un padre, madre o tutor legal toma conocimiento de que se nos ha suministrado cualquier dato personal sin su consentimiento, puede ponerse en contacto con nosotros para su inmediata eliminación.
+        </p>
+      </section>
+
+      <!-- Section: Derechos del Usuario -->
+      <section id="derechos" class="section-block">
+        <h2><span class="section-number">10</span> Tus Derechos (GDPR, CCPA y Normativas Aplicables)</h2>
+        <p>
+          Dependiendo de tu lugar de residencia, la legislación de protección de datos (como el Reglamento General de Protección de Datos de la UE - RGPD/GDPR, o la Ley de Privacidad del Consumidor de California - CCPA) te otorga los siguientes derechos:
+        </p>
+        <ul>
+          <li><strong>Derecho de Acceso:</strong> Conocer qué datos de juego están asociados a tu sesión.</li>
+          <li><strong>Derecho de Rectificación:</strong> Corregir información inexacta (por ejemplo, desajustes en el progreso).</li>
+          <li><strong>Derecho de Supresión ("Derecho al olvido"):</strong> Solicitar el borrado íntegro de tus datos de la nube.</li>
+          <li><strong>Derecho a la Limitación u Oposición:</strong> Oponerte al tratamiento o solicitar restricciones temporales.</li>
+        </ul>
+        <p>
+          Para ejercer cualquiera de estos derechos, contáctanos a través de las vías indicadas a continuación.
+        </p>
+      </section>
+
+      <!-- Section: Modificaciones a la Política -->
+      <section id="modificaciones" class="section-block">
+        <h2><span class="section-number">11</span> Modificaciones a esta Política</h2>
+        <p>
+          Podemos actualizar nuestra Política de Privacidad periódicamente para reflejar cambios en las características del juego (por ejemplo, la incorporación de nuevas funciones de juego, eventos o ajustes de servicios de terceros) o por motivos legales y regulatorios.
+        </p>
+        <p>
+          Cualquier cambio entrará en vigencia inmediatamente tras la publicación del texto actualizado en esta misma página web. Te recomendamos revisar esta política de manera periódica.
+        </p>
+      </section>
+
+      <!-- Section: Contacto y Soporte -->
+      <section id="contacto" class="section-block">
+        <h2><span class="section-number">12</span> Información de Contacto</h2>
+        <p>
+          Si tienes preguntas, sugerencias o deseas solicitar la eliminación de tus datos asociados a <strong>Cinthia's Quest</strong>, puedes contactar al desarrollador responsable:
+        </p>
+
+        <div class="contact-card">
+          <div>
+            <strong>Responsable:</strong> Joaquín Gasperetti / HK Entertainment
+          </div>
+          <div>
+            <strong>Aplicación:</strong> Cinthia's Quest (<code>com.hkemtrentainment.cinthiasquestr</code>)
+          </div>
+          <div>
+            <strong>Correo Electrónico de Contacto:</strong>
+            <span id="contactEmail">joaquingasperetti.dev@gmail.com</span>
+          </div>
+          <div>
+            <strong>Repositorio / Alojamiento:</strong>
+            <a href="https://github.com/joaquingasperetti/cinthiasremake" target="_blank" rel="noopener noreferrer">
+              github.com/joaquingasperetti/cinthiasremake ↗
+            </a>
+          </div>
+          <button id="copyEmailBtn" class="btn-action copy-email-btn" aria-label="Copiar correo de contacto al portapapeles">
+            <span>📋</span>
+            <span id="copyBtnText">Copiar correo</span>
+          </button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div style="max-width: 1120px; margin: 0 auto;">
+      <p style="margin-bottom: 0.5rem;">
+        © 2026 Cinthia's Quest & Joaquín Gasperetti / HK Entertainment. Todos los derechos reservados.
+      </p>
+      <p style="font-size: 0.775rem;">
+        Página generada para alojamiento en GitHub Pages en cumplimiento con las directrices para desarrolladores de Google Play Store.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Theme Toggle Logic
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeText = document.getElementById('themeText');
+
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeIcon.textContent = '☀️';
+        themeText.textContent = 'Claro';
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        themeIcon.textContent = '🌙';
+        themeText.textContent = 'Oscuro';
+      }
+    }
+
+    // Initialize theme based on preference or system
+    let savedTheme = null;
+    try {
+      savedTheme = localStorage.getItem('cq_privacy_theme');
+    } catch (e) {
+      console.warn('LocalStorage inaccesible para tema');
+    }
+
+    if (savedTheme) {
+      applyTheme(savedTheme);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      applyTheme('dark');
+    }
+
+    themeToggleBtn.addEventListener('click', function () {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      try {
+        localStorage.setItem('cq_privacy_theme', next);
+      } catch (e) {
+        console.warn('No se pudo guardar tema en localStorage');
+      }
+    });
+
+    // Print Button
+    document.getElementById('printBtn').addEventListener('click', function () {
+      window.print();
+    });
+
+    // Copy Email to Clipboard
+    const copyEmailBtn = document.getElementById('copyEmailBtn');
+    const copyBtnText = document.getElementById('copyBtnText');
+    const contactEmail = document.getElementById('contactEmail').innerText.trim();
+
+    copyEmailBtn.addEventListener('click', function () {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(contactEmail).then(function () {
+          copyBtnText.textContent = '¡Copiado!';
+          setTimeout(function () {
+            copyBtnText.textContent = 'Copiar correo';
+          }, 2000);
+        }).catch(function () {
+          fallbackCopy();
+        });
+      } else {
+        fallbackCopy();
+      }
+
+      function fallbackCopy() {
+        const temp = document.createElement('textarea');
+        temp.value = contactEmail;
+        document.body.appendChild(temp);
+        temp.select();
+        try {
+          document.execCommand('copy');
+          copyBtnText.textContent = '¡Copiado!';
+          setTimeout(function () {
+            copyBtnText.textContent = 'Copiar correo';
+          }, 2000);
+        } catch (err) {
+          copyBtnText.textContent = 'Error al copiar';
+        }
+        document.body.removeChild(temp);
+      }
+    });
+
+    // Search and Filter Functionality
+    const searchInput = document.getElementById('searchInput');
+    const sections = document.querySelectorAll('.section-block');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    searchInput.addEventListener('input', function (e) {
+      const query = e.target.value.toLowerCase().trim();
+      if (!query) {
+        sections.forEach(function (sec) {
+          sec.style.display = 'block';
+        });
+        navItems.forEach(function (item) {
+          item.style.display = 'block';
+        });
+        return;
+      }
+
+      sections.forEach(function (sec) {
+        const text = sec.innerText.toLowerCase();
+        if (text.includes(query)) {
+          sec.style.display = 'block';
+        } else {
+          sec.style.display = 'none';
+        }
+      });
+    });
+
+    // Active Section Tracking on Scroll
+    window.addEventListener('scroll', function () {
+      const scrollPos = window.scrollY + 120;
+      sections.forEach(function (sec) {
+        if (sec.style.display === 'none') return;
+        const top = sec.offsetTop;
+        const height = sec.offsetHeight;
+        const id = sec.getAttribute('id');
+        if (scrollPos >= top && scrollPos < top + height) {
+          navItems.forEach(function (item) {
+            const anchor = item.querySelector('a');
+            if (anchor && anchor.getAttribute('href') === '#' + id) {
+              item.classList.add('active');
+            } else {
+              item.classList.remove('active');
+            }
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
